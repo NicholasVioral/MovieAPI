@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendations</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="header">
+            <h1 id="header-title">Movie Recommendations</h1>
+        </div>
+        <div class="tabs">
+            <button class="tab-link active" data-tab="recommendation-tab">Movie Recommendation</button>
+            <button class="tab-link" data-tab="random-movie-tab">Randomized Movie</button>
+        </div>
+    </div>
+
+    <div class="content-container" id="recommendation-container">
+        <div id="recommendation-tab" class="tab-content active">
+            <input type="text" id="movie-input" list="movie-suggestions" placeholder="Search for a movie...">
+            <datalist id="movie-suggestions"></datalist>
+            <button id="search-button">Search</button>
+            <button id="clear-button">Clear</button>
+            <div id="recommendations"></div>
+            <div id="pagination" style="display: none;">
+                <button id="prev-button" onclick="prevPage()">Prev</button>
+                <button id="next-button" onclick="nextPage()">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-container" id="random-movie-container">
+        <div id="random-movie-tab" class="tab-content">
+            <h2>Select a Genre</h2>
+            <select id="genre-select">
+                <option value="">--Choose a Genre--</option>
+                <!-- Genre options will be populated by JavaScript -->
+            </select>
+            <button id="generate-movie-button">Generate Movie</button>
+            <div id="random-movie-result"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

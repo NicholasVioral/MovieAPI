@@ -1,0 +1,311 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #e0e0e0;
+}
+
+.main-container {
+    text-align: center;
+    background: #2a2a2a;
+    padding: 20px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 20px;
+}
+
+.header h1 {
+    color: #e0e0e0;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tab-link {
+    background-color: #6a0dad;
+    color: white;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.tab-link:hover {
+    background-color: #5a0b9e;
+}
+
+.tab-link.active {
+    background-color: #5a0b9e;
+}
+
+.content-container {
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 20px;
+}
+
+#recommendation-container {
+    text-align: center;
+    background: #2a2a2a;
+    padding: 20px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+#recommendation-container.active {
+    display: block;
+}
+
+#random-movie-container {
+    text-align: center;
+    background: #2a2a2a;
+    padding: 15px 30px; /* Reduced padding */
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    max-width: 500px; /* Reduced max-width */
+    margin: 20px auto;
+    display: none;
+}
+
+#random-movie-container.active {
+    display: block;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+#movie-input {
+    width: 80%;
+    padding: 12px;
+    margin-bottom: 20px;
+    background-color: #333;
+    border: 2px solid #6a0dad;
+    color: #e0e0e0;
+    border-radius: 8px;
+    transition: border-color 0.3s;
+}
+
+#movie-input:focus {
+    border-color: #9b59b6;
+    outline: none;
+}
+
+#search-button, #clear-button {
+    padding: 12px 24px;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s, transform 0.2s;
+    margin: 0 5px;
+}
+
+#search-button {
+    background-color: #6a0dad;
+}
+
+#search-button:hover {
+    background-color: #5a0b9e;
+    transform: scale(1.05);
+}
+
+#clear-button {
+    background-color: #c0392b;
+}
+
+#clear-button:hover {
+    background-color: #a0281e;
+    transform: scale(1.05);
+}
+
+#recommendations {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.movie {
+    margin-bottom: 20px;
+    padding: 20px;
+    background: linear-gradient(145deg, #3a3a3a, #2a2a2a);
+    border-radius: 12px;
+    color: #e0e0e0;
+    width: 240px; /* Adjusted width */
+    text-align: left;
+    height: 520px; /* Increased height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.movie:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.movie img {
+    width: 100%;
+    height: 300px; /* Adjusted height for images */
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.movie-title {
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 1em;
+    height: 40px; /* Fixed height for titles */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.movie-description {
+    font-size: 0.9em; /* Adjusted font size */
+    margin-top: 10px;
+    height: 80px; /* Increased height for description */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.read-more {
+    color: #6a0dad;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+.movie-rating,
+.movie-release-date {
+    font-size: 0.8em;
+    margin-top: 5px;
+}
+
+.movie-rating {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.movie-rating .star-icon {
+    color: #ffd700;
+    margin-right: 5px;
+}
+
+.random-movie-container {
+    text-align: center;
+    background: #2a2a2a;
+    padding: 15px 30px; /* Reduced padding */
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    max-width: 500px; /* Reduced max-width */
+    margin: 20px auto;
+}
+
+.random-movie-container h2 {
+    color: #e0e0e0;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#genre-select {
+    width: 80%;
+    padding: 12px;
+    margin-bottom: 20px;
+    background-color: #333;
+    border: 2px solid #6a0dad;
+    color: #e0e0e0;
+    border-radius: 8px;
+    transition: border-color 0.3s;
+}
+
+#genre-select:focus {
+    border-color: #9b59b6;
+    outline: none;
+}
+
+#generate-movie-button {
+    padding: 12px 24px;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s, transform 0.2s;
+    background-color: #6a0dad;
+}
+
+#generate-movie-button:hover {
+    background-color: #5a0b9e;
+    transform: scale(1.05);
+}
+
+#random-movie-result {
+    margin-top: 30px;
+    color: #e0e0e0;
+    font-size: 1em;
+}
+
+#random-movie-result img {
+    width: 50%; /* Reduced width */
+    height: auto;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+#random-movie-result a.read-more {
+    color: #6a0dad;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#random-movie-result a.read-more:hover {
+    text-decoration: underline;
+}
+
+#prev-button, #next-button {
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s, transform 0.2s;
+    margin: 0 5px;
+    background-color: #6a0dad;
+}
+
+#prev-button:hover, #next-button:hover {
+    background-color: #5a0b9e;
+    transform: scale(1.05);
+}
